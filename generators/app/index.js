@@ -17,13 +17,13 @@ const BOXEN_OPTS = {
     borderStyle: 'round'
 };
 const APP_TYPE = {
-    webpack: 'webpack',
-    rollup: 'rollup'
+    pc: 'pc',
+    h5: 'h5'
 };
 const DEFAULT_DIR = 'webpack-app';
 const GIT_BASE = 'https://github.com/';
-const TPL_REPOSITORY = 'alienzhou/webpack-kickoff-template';
-const ROLLUP_TPL_REPOSITORY = 'alienzhou/rollup-kickoff-template';
+const TPL_REPOSITORY = 'ziwen-wang/vant-vue3-template-pc'; // pc项目
+const ROLLUP_TPL_REPOSITORY = 'ziwen-wang/vant-vue3-template-h5'; // h5
 const ORA_SPINNER = {
     "interval": 80,
     "frames": [
@@ -44,7 +44,7 @@ class WebpackKickoffGenerator extends Generator {
     constructor(params, opts) {
         super(params, opts);
 
-        this.type = APP_TYPE.webpack;
+        this.type = APP_TYPE.pc;
         this.dirName = this._getDefaultDir();
 
         this._getDefaultDir = this._getDefaultDir.bind(this);
@@ -143,17 +143,17 @@ class WebpackKickoffGenerator extends Generator {
             type: 'list',
             name: 'type',
             choices: [{
-                name: 'webpack (app based on webpack, webpack-cli, wds……)',
-                value: APP_TYPE.webpack
+                name: 'pc (app based on ts, vue, element-plus……)',
+                value: APP_TYPE.pc
             }, {
-                name: 'rollup (maybe have a try for developing a library)',
-                value: APP_TYPE.rollup
+                name: 'h5 (app based on ts, vue, vant……)',
+                value: APP_TYPE.h5
             }],
-            message: 'Please choose the build-tool for your project：',
-            default: APP_TYPE.webpack
+            message: 'Please choose the use for your project：',
+            default: APP_TYPE.pc
         }];
 
-        return this.prompt(opts).then(({type}) => {
+        return this.prompt(opts).then(({ type }) => {
             this.type = type;
             this.dirName = this._getDefaultDir();
         });
@@ -174,7 +174,7 @@ class WebpackKickoffGenerator extends Generator {
             }
         }];
 
-        return this.prompt(opts).then(({dirName}) => {
+        return this.prompt(opts).then(({ dirName }) => {
             this.dirName = dirName;
         });
     }
@@ -194,7 +194,7 @@ class WebpackKickoffGenerator extends Generator {
             default: false
         }];
 
-        return this.prompt(opts).then(({overwrite}) => {
+        return this.prompt(opts).then(({ overwrite }) => {
             if (!overwrite) {
                 this.dirName = DEFAULT_DIR;
                 return this._askDirFlow();
@@ -246,7 +246,7 @@ class WebpackKickoffGenerator extends Generator {
      */
     writing() {
         const done = this.async();
-        const repository = this.type === APP_TYPE.webpack
+        const repository = this.type === APP_TYPE.pc
             ? TPL_REPOSITORY
             : ROLLUP_TPL_REPOSITORY;
 
