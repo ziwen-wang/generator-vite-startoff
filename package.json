@@ -1,6 +1,6 @@
 {
   "name": "generator-vite-startoff",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "To help quickly generate project templates, just select h5&pc",
   "main": "generators/app/index.js",
   "scripts": {
