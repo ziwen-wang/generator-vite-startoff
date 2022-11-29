@@ -40,7 +40,7 @@ const ORA_SPINNER = {
     ]
 };
 
-class WebpackKickoffGenerator extends Generator {
+class ViteStartoffGenerator extends Generator {
     constructor(params, opts) {
         super(params, opts);
 
@@ -63,7 +63,7 @@ class WebpackKickoffGenerator extends Generator {
      */
     _checkVersion() {
         this.log();
-        this.log('🛠️  Checking your Generator-Webpack-Kickoff version...');
+        this.log('🛠️  Checking your Generator-Vite-Startoff version...');
 
         let checkResult = false;
         const notifier = updateNotifier({
@@ -76,7 +76,7 @@ class WebpackKickoffGenerator extends Generator {
             const messages = [];
             messages.push(
                 chalk.bgYellow.black(' WARNI: ')
-                + '  Generator-Webpack-Kickoff is not latest.\n'
+                + '  Generator-Vite-Startoff is not latest.\n'
             );
             messages.push(
                 chalk.grey('current ')
@@ -91,11 +91,11 @@ class WebpackKickoffGenerator extends Generator {
             );
             this.log(boxen(messages.join('\n'), BOXEN_OPTS));
             beeper();
-            this.log('🛠️  Finish checking your Generator-Webpack-Kickoff. CAUTION ↑↑', '⚠️');
+            this.log('🛠️  Finish checking your Generator-Vite-Startoff. CAUTION ↑↑', '⚠️');
         }
         else {
             checkResult = true;
-            this.log('🛠️  Finish checking your Generator-Webpack-Kickoff. OK', chalk.green('✔'));
+            this.log('🛠️  Finish checking your Generator-Vite-Startoff. OK', chalk.green('✔'));
         }
 
         return checkResult;
@@ -113,16 +113,16 @@ class WebpackKickoffGenerator extends Generator {
         const version = `(v${pkg.version})`;
         const messages = [];
         messages.push(
-            `💁 Welcome to use Generator-Webpack-Kickoff ${chalk.grey(version)}   `
+            `💁 Welcome to use Generator-Vite-Startoff ${chalk.grey(version)}   `
         );
         messages.push(
             chalk.yellow('You can create a Webpack/Rollup-based frontend environment.')
         );
         messages.push(
-            chalk.grey('https://github.com/alienzhou/generator-webpack-kickoff')
+            chalk.grey('https://github.com/ziwen-wang/generator-vite-startoff')
         );
         messages.push(
-            chalk.grey('https://www.npmjs.com/package/generator-webpack-kickoff')
+            chalk.grey('https://github.com/ziwen-wang/generator-vite-startoff')
         )
         this.log(
             boxen(messages.join('\n'), {
@@ -320,4 +320,4 @@ class WebpackKickoffGenerator extends Generator {
     }
 }
 
-module.exports = WebpackKickoffGenerator;
+module.exports = ViteStartoffGenerator;

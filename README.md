@@ -1,34 +1,23 @@
-# generator-webpack-kickoff
+# generator-vite-startoff
 
-[![NPM version](https://img.shields.io/npm/v/generator-webpack-kickoff.svg)](https://www.npmjs.com/package/generator-webpack-kickoff) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![NPM version](https://img.shields.io/npm/v/generator-vite-startoff.svg)](https://www.npmjs.com/package/generator-vite-startoff) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 ## Background
-
-Help you to quickly start a project based on [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/).
-
-In my work, I often need to start a tiny demo quickly to
-
-- try a npm lib by `import`
-- test/try a webpack plugin or loader
-- write a demo page for some features
-- develop a library
-- ……
-
-Without configuring Wepack/Rollup, `generator-webpack-kickoff` makes these more simple.
+To help quickly generate project templates, just select h5&pc
 
 ## Install
 
-Install Yeoman and generator-webpack-kickoff (we assume you have pre-installed node.js).
+Install Yeoman and generator-vite-startoff (we assume you have pre-installed node.js).
 
 ```bash
 npm install -g yo
-npm install -g generator-webpack-kickoff
+npm install -g generator-vite-startoff
 ```
 
 ## Usage
 
 ```bash
-yo webpack-kickoff
+yo vite-startoff
 ```
 
 ## Getting To Know Yeoman
